@@ -36,6 +36,7 @@ public class RegistrationTestsViaJenkins extends TestBase {
     }
 
     @Test
+    @Tag("registrationForm")
     @DisplayName("Успешная отправка формы с минимальным количеством данным")
     void registrationWithMinimumDataTest() {
         registrationPage.openPage()
@@ -51,6 +52,7 @@ public class RegistrationTestsViaJenkins extends TestBase {
     }
 
     @Test
+    @Tag("registrationForm")
     @DisplayName("Проверка, что форма не отправляется без заполнения обязательных полей")
     void unsuccessfulRegistrationTest() {
         registrationPage.openPage()
