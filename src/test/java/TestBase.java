@@ -14,8 +14,11 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
     @BeforeAll
     static void setupConfig() {
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.browserSize = "1920x1080";
+        Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url") + "/wd/hub";
+
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserSize = System.getProperty("resolution", "1980x1080");
+        Configuration.browserVersion = System.getProperty("browser_version", "127.0");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of("enableVNC", true, "enableVideo", true));

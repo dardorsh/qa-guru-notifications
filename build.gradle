@@ -41,6 +41,8 @@ test {
 
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
+
     useJUnitPlatform()
     systemProperty "console.encoding", "UTF-8"
 
