@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'com.guru'
@@ -8,20 +7,6 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-}
-
-allure {
-    report {
-        version.set("2.19.0")
-    }
-    adapter {
-        aspectjWeaver.set(true)
-        frameworks {
-            junit5 {
-                adapterVersion.set("2.19.0")
-            }
-        }
-    }
 }
 
 dependencies {
